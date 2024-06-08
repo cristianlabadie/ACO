@@ -1,0 +1,4 @@
+Se debe crear una clase hormiga, la cual va a ir recorriendo un mapa dado y por cada nodo va a buscar dentro de las 25 mejores candidatas para moverse, si ya pasó por esa arista y se queda sin opciones de movimiento, debe utilizar el espacio completo del mapa con los nodos restantes, entonces cada vez que una hormiga pasa por una arista ya recorrida por una hormiga, eso irá aumentando la cantidad de feromonas del recorrido dado que es el recorrido más optimo
+
+
+luego tengo que tener una tabla de feromonas en donde al finalizar cada iteración debo aplicar el concepto de evaporación a cada arista, 
