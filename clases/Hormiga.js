@@ -1,11 +1,12 @@
 class Hormiga {
 	constructor(mapa) {
 		this.mapa = mapa;
-		this.tour = [];
+		this.tour = [0];
 		this.largo = mapa.data.length;
 		this.visitados = Array(this.largo).fill(false);
 		this.candidatos = [];
 		this.ciudadActual = null;
+		this.visitados[0] = true;
 	}
 
 	getRandom = (largo) => {
@@ -26,7 +27,6 @@ class Hormiga {
 				this.candidatos.push(candidato);
 			}
 		}
-
 		// Si no hay candidatos, entonces debo ir a una ciudad aleatoria
 		if (this.candidatos.length === 0) {
 			let posible = this.getRandom(this.largo - 1);
@@ -46,10 +46,10 @@ class Hormiga {
 			for (let i = 0; i < this.candidatos.length; i++) {
 				const candidato = this.candidatos[i];
 				const feromonas = this.mapa.getFeromonas(this.ciudadActual, candidato);
-				console.log(
-					`Feromonas de ${this.ciudadActual} a ${candidato}: `,
-					feromonas,
-				);
+				// console.log(
+				// 	`Feromonas de ${this.ciudadActual} a ${candidato}: `,
+				// 	feromonas,
+				// );
 				const probabilidad = feromonas; // Aquí puedes ajustar la influencia de las feromonas
 				probabilidades.push(probabilidad);
 				sumProb += probabilidad;
